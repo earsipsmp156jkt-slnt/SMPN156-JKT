@@ -1,84 +1,998 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMP Negeri 156 Jakarta - Portal Resmi</title>
-    <!-- Google Fonts & Bootstrap 5 & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <title>SMP Negeri 156 Jakarta - Official School Website</title>
     
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#1d4ed8',
+                            600: '#1e40af',
+                            700: '#1e3a8a',
+                            800: '#172554',
+                        },
+                        secondary: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
-        .hero { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; padding: 80px 0; border-radius: 0 0 30px 30px; }
-        .card-custom { border: none; border-radius: 16px; background: white; box-shadow: 0 4px 20px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card-custom:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .navbar { background: rgba(255,255,255,0.95) !important; backdrop-filter: blur(10px); }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(23, 37, 84, 0.95) 0%, rgba(30, 58, 138, 0.85) 100%);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e40af;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1e3a8a;
+        }
     </style>
 </head>
-<body>
+<body class="font-sans bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen selection:bg-brand-600 selection:text-white">
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light sticky-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold text-primary" href="index.html"><i class="bi bi-building me-2"></i>SMPN 156 JAKARTA</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
-    <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav ms-auto gap-2">
-        <li class="nav-item"><a class="nav-link active fw-semibold" href="index.html">Beranda</a></li>
-        <li class="nav-item"><a class="nav-link fw-semibold" href="kjp.html">KJP & PIP</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- ========================================== -->
+    <!-- NAVIGATION BAR                             -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & School Name -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <!-- Local Asset Path with SVG Fallback -->
+                    <img src="assets/img/logo.png" 
+                         onerror="this.onerror=null; this.src='https://placehold.co/100x100/1e40af/ffffff?text=156';" 
+                         alt="Logo SMPN 156 Jakarta" 
+                         class="w-12 h-12 object-contain rounded-lg group-hover:scale-105 transition-transform duration-200">
+                    <div>
+                        <span class="block text-lg font-bold text-slate-900 leading-tight group-hover:text-brand-600 transition-colors">SMPN 156 JAKARTA</span>
+                        <span class="block text-xs text-slate-500 font-medium tracking-wide">NPSN: 20100230 &bull; Johar Baru</span>
+                    </div>
+                </a>
 
-<!-- Hero Section -->
-<div class="hero text-center">
-    <div class="container">
-        <span class="badge bg-white text-primary px-3 py-2 rounded-pill fw-bold mb-3">Official Website Sekolah</span>
-        <h1 class="display-4 fw-bold mb-3">SMP Negeri 156 Jakarta</h1>
-        <p class="lead opacity-75">Pusat informasi akademik, berita kegiatan sekolah, transparansi KJP, dan galeri prestasi siswa.</p>
-    </div>
-</div>
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                    <a href="#beranda" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50 transition">Beranda</a>
+                    <a href="#profil" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50 transition">Profil</a>
+                    <a href="#berita" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50 transition">Berita & Informasi</a>
+                    <a href="#kjp-pip" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50 transition">Info KJP & PIP</a>
+                    <a href="#kontak" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-brand-50 transition">Kontak & Saran</a>
+                    
+                    <!-- Highlight Button: Arsip Pegawai (URL Eksternal) -->
+                    <a href="#" target="_blank" class="ml-2 inline-flex items-center gap-2 bg-secondary-500 hover:bg-secondary-600 text-slate-900 font-bold px-4 py-2 rounded-lg text-sm shadow-sm transition hover:shadow-md">
+                        <i class="fa-solid fa-folder-closed text-xs"></i>
+                        <span>Arsip Pegawai</span>
+                    </a>
+                </nav>
 
-<!-- Container Konten Utama -->
-<div class="container my-5">
-    <h3 class="fw-bold mb-4"><i class="bi bi-newspaper text-primary me-2"></i> Berita & Pengumuman Terbaru</h3>
-    <div id="konten-berita" class="row g-4">
-        <!-- Data dimuat secara dinamis via Javascript -->
-        <div class="col-12 text-center py-4">
-            <p class="text-muted">Memuat informasi berita...</p>
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="text-slate-600 hover:text-brand-600 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="Buka Menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            <a href="#beranda" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Beranda</a>
+            <a href="#profil" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Profil Sekolah</a>
+            <a href="#berita" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Berita & Publikasi</a>
+            <a href="#kjp-pip" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Info KJP & PIP</a>
+            <a href="#kontak" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-600">Kontak & Saran</a>
+            <a href="#" target="_blank" class="block text-center mt-4 bg-secondary-500 hover:bg-secondary-600 text-slate-900 font-bold px-4 py-2.5 rounded-lg text-sm shadow">
+                <i class="fa-solid fa-folder-closed mr-2"></i>Portal Arsip Pegawai
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- ========================================== -->
+        <!-- SECTION 1: HERO & BERANDA                  -->
+        <!-- ========================================== -->
+        <section id="beranda" class="relative bg-slate-900 text-white overflow-hidden py-20 lg:py-28">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1920&auto=format&fit=crop" 
+                     alt="Gedung SMPN 156 Jakarta" 
+                     class="w-full h-full object-cover object-center opacity-30">
+                <div class="absolute inset-0 hero-gradient"></div>
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <span class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-brand-500/30 text-brand-100 border border-brand-400/30">
+                            <i class="fa-solid fa-leaf text-emerald-400"></i> Sekolah Berbudaya Lingkungan & Adiwiyata
+                        </span>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                            Selamat Datang di Portal Resmi SMP Negeri 156 Jakarta
+                        </h1>
+                        <p class="text-base sm:text-lg text-slate-200 max-w-2xl mx-auto lg:mx-0 font-normal">
+                            Membentuk insan yang berakhlak mulia, berprestasi akademis & non-akademis, ramah lingkungan, serta unggul dalam tantangan era digital.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-2">
+                            <a href="#berita" class="bg-brand-600 hover:bg-brand-700 text-white px-6 py-3.5 rounded-xl font-bold text-center transition shadow-lg hover:shadow-brand-500/40 flex items-center justify-center gap-2">
+                                <span>Informasi & Pengumuman</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                            <a href="#profil" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm px-6 py-3.5 rounded-xl font-semibold text-center transition flex items-center justify-center gap-2">
+                                <span>Profil & Sejarah</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sambutan Kepala Sekolah Card -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 sm:p-8 rounded-2xl shadow-2xl relative overflow-hidden">
+                            <div class="flex items-center gap-4 mb-4">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" 
+                                     alt="Kepala Sekolah SMPN 156" 
+                                     class="w-16 h-16 rounded-full object-cover border-2 border-secondary-500 shadow-md">
+                                <div>
+                                    <h3 class="text-lg font-bold text-white">H. Sarwono, S.Pd., M.A.</h3>
+                                    <p class="text-xs text-brand-200 font-medium">Kepala SMPN 156 Jakarta</p>
+                                </div>
+                            </div>
+                            <blockquote class="text-sm text-slate-200 italic leading-relaxed mb-4">
+                                "Pendidikan karakter dan kepedulian lingkungan adalah fondasi utama kami dalam membimbing peserta didik Johar Baru menuju masa depan yang cemerlang dan bermartabat."
+                            </blockquote>
+                            <a href="#profil" class="inline-flex items-center text-xs font-semibold text-secondary-500 hover:text-secondary-600 transition gap-1">
+                                <span>Baca Selengkapnya</span>
+                                <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUICK LINKS -->
+        <section class="relative z-20 -mt-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="#kjp-pip" class="flex flex-col items-center p-4 rounded-xl hover:bg-brand-50 transition text-center group">
+                    <div class="w-12 h-12 bg-blue-100 text-brand-600 rounded-xl flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800">Layanan KJP & PIP</span>
+                    <span class="text-[11px] text-slate-500 mt-1">Bantuan Pendidikan</span>
+                </a>
+
+                <a href="#berita" class="flex flex-col items-center p-4 rounded-xl hover:bg-brand-50 transition text-center group">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800">Pengumuman</span>
+                    <span class="text-[11px] text-slate-500 mt-1">Info Akademik Terkini</span>
+                </a>
+
+                <a href="#" class="flex flex-col items-center p-4 rounded-xl hover:bg-brand-50 transition text-center group">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800">Program Adiwiyata</span>
+                    <span class="text-[11px] text-slate-500 mt-1">Green House & Hijau</span>
+                </a>
+
+                <a href="#kontak" class="flex flex-col items-center p-4 rounded-xl hover:bg-brand-50 transition text-center group">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl mb-3 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <span class="text-xs sm:text-sm font-bold text-slate-800">Kontak & Aduan</span>
+                    <span class="text-[11px] text-slate-500 mt-1">Kritik & Saran</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- STATISTIK INTERAKTIF (Counter Section) -->
+        <section class="py-16 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">SMPN 156 Dalam Angka</h2>
+                    <p class="text-slate-600 mt-2 text-sm">Kapasitas dan entitas pembelajar di SMP Negeri 156 Jakarta.</p>
+                </div>
+
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                        <div class="text-brand-600 text-3xl mb-2"><i class="fa-solid fa-user-graduate"></i></div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-1 counter" data-target="744">0</div>
+                        <div class="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider">Siswa Aktif</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                        <div class="text-brand-600 text-3xl mb-2"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-1 counter" data-target="30">0</div>
+                        <div class="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider">Guru Pengajar</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                        <div class="text-brand-600 text-3xl mb-2"><i class="fa-solid fa-users-gear"></i></div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-1 counter" data-target="10">0</div>
+                        <div class="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider">Tenaga Pendidik</div>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+                        <div class="text-brand-600 text-3xl mb-2"><i class="fa-solid fa-school"></i></div>
+                        <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-1 counter" data-target="21">0</div>
+                        <div class="text-xs sm:text-sm font-semibold text-slate-500 uppercase tracking-wider">Rombongan Belajar</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECTION 2: PROFIL SEKOLAH                  -->
+        <!-- ========================================== -->
+        <section id="profil" class="py-16 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">Profil Lengkap</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">SMP Negeri 156 Jakarta</h2>
+                    <p class="text-slate-600 mt-3 text-sm sm:text-base">Mengenal sejarah, visi, misi, dan komitmen pelayanan pendidikan masyarakat Johar Baru, Jakarta Pusat.</p>
+                </div>
+
+                <!-- Sejarah & Banner -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+                    <div class="lg:col-span-6 space-y-4">
+                        <h3 class="text-2xl font-bold text-slate-900">Sejarah Singkat</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            <strong>SMP Negeri 156 Jakarta</strong> (NPSN: 20100230) berdiri sebagai salah satu sarana pendidikan menengah pertama utama di wilayah Kelurahan Johar Baru, Kecamatan Johar Baru, Jakarta Pusat.
+                        </p>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Berlokasi di Jalan Kramat Pulo Gundul III, sekolah ini secara konsisten mengembangkan potensi peserta didik melalui pembelajaran terpadu, pembiasaan religius, fasilitas laboratorium komputer, perpustakaan, serta program keunggulan <strong>Sekolah Berbudaya Lingkungan (Adiwiyata)</strong> dengan sarana Green House dan pengolahan sampah mandiri.
+                        </p>
+                    </div>
+                    <div class="lg:col-span-6">
+                        <div class="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000&auto=format&fit=crop" 
+                                 alt="Kegiatan Pembelajaran" 
+                                 class="w-full h-72 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent flex items-end p-6">
+                                <span class="text-white font-medium text-sm">Pembelajaran berbasis lingkungan dan teknologi di SMPN 156 Jakarta.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visi & Misi Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <div class="w-12 h-12 bg-brand-600 text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Visi Sekolah</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed font-medium">
+                            "Terwujudnya Lulusan yang Berakhlak Mulia, Cerdas, Berprestasi, Berwawasan Lingkungan Hidup, dan Siap Menghadapi Perkembangan Era Digital."
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200">
+                        <div class="w-12 h-12 bg-secondary-500 text-slate-900 rounded-xl flex items-center justify-center text-xl mb-4 shadow">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Misi Sekolah</h3>
+                        <ul class="space-y-2 text-slate-600 text-sm list-disc list-inside">
+                            <li>Menumbuhkan kedisiplinan dan pembiasaan nilai-nilai keagamaan.</li>
+                            <li>Menyelenggarakan pembelajaran berbasis ICT yang inovatif dan interaktif.</li>
+                            <li>Mengembangkan potensi bakat siswa melalui kegiatan ekstrakurikuler.</li>
+                            <li>Mewujudkan lingkungan sekolah yang bersih, asri, dan hijau (Adiwiyata).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Prominent Highlight Banner: ARSIP PEGAWAI -->
+                <div class="bg-gradient-to-r from-brand-800 via-brand-700 to-brand-600 text-white rounded-2xl p-8 sm:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-2 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 bg-amber-400/20 text-amber-300 text-xs font-semibold px-3 py-1 rounded-full border border-amber-400/30">
+                            <i class="fa-solid fa-lock"></i> Portal Internal Pendidik
+                        </div>
+                        <h3 class="text-2xl font-bold">Arsip Pegawai & Kepegawaian Internal</h3>
+                        <p class="text-slate-200 text-sm max-w-2xl">Akses portal pengelolaan berkas administrasi, SK Pengangkatan, E-Kinerja, dan dokumen kepegawaian SMPN 156 Jakarta.</p>
+                    </div>
+                    <a href="#" target="_blank" class="bg-secondary-500 hover:bg-secondary-600 text-slate-900 font-extrabold px-6 py-3.5 rounded-xl text-sm transition shadow-lg flex items-center gap-2 whitespace-nowrap">
+                        <i class="fa-solid fa-folder-closed"></i>
+                        <span>Buka Arsip Pegawai</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECTION 3: BERITA & PENGUMUMAN             -->
+        <!-- ========================================== -->
+        <section id="berita" class="py-16 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">Pembaruan Berkelanjutan</span>
+                        <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Berita, Pengumuman & Kegiatan</h2>
+                    </div>
+                    <div class="relative w-full md:w-72">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                        <input type="text" id="news-search" placeholder="Cari berita..." class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white">
+                    </div>
+                </div>
+
+                <!-- Category Pills -->
+                <div class="flex flex-wrap gap-2 mb-8" id="category-pills">
+                    <button data-category="Semua" class="pill-btn bg-brand-600 text-white px-4 py-2 rounded-xl text-xs font-semibold transition">Semua Informasi</button>
+                    <button data-category="Pengumuman" class="pill-btn bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-4 py-2 rounded-xl text-xs font-semibold transition">Pengumuman</button>
+                    <button data-category="Berita" class="pill-btn bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-4 py-2 rounded-xl text-xs font-semibold transition">Berita Kegiatan</button>
+                    <button data-category="Prestasi" class="pill-btn bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-4 py-2 rounded-xl text-xs font-semibold transition">Prestasi Siswa</button>
+                </div>
+
+                <!-- News Grid Container -->
+                <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Dynamic rendering via JS -->
+                </div>
+
+                <div id="no-news" class="hidden text-center py-12">
+                    <i class="fa-regular fa-folder-open text-4xl text-slate-400 mb-3"></i>
+                    <p class="text-slate-600 text-sm font-medium">Tidak ada berita atau pengumuman yang cocok dengan kriteria pencarian Anda.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECTION 4: INFO KJP PLUS & PIP             -->
+        <!-- ========================================== -->
+        <section id="kjp-pip" class="py-16 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">Bantuan Sosial Pendidikan</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-2">Informasi KJP Plus & PIP</h2>
+                    <p class="text-slate-600 mt-2 text-sm">Panduan resmi, kriteria pendataan, dan verifikasi dana bantuan siswa di SMPN 156 Jakarta.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                    <!-- Card KJP Plus -->
+                    <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-blue-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-md">Pemprov DKI Jakarta</span>
+                                <i class="fa-solid fa-id-card text-brand-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Kartu Jakarta Pintar (KJP Plus)</h3>
+                            <p class="text-slate-600 text-sm mb-4">Bantuan biaya pendidikan dari Pemprov DKI Jakarta bagi siswa usia sekolah dari keluarga tidak mampu.</p>
+                            
+                            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Persyaratan Utama:</h4>
+                            <ul class="text-xs text-slate-600 space-y-1.5 mb-6 list-disc list-inside">
+                                <li>Terdaftar dalam Data Terpadu Kesejahteraan Sosial (DTKS).</li>
+                                <li>Memiliki NIK DKI Jakarta dan berdomisili di DKI Jakarta.</li>
+                                <li>Mempunyai tata tertib disiplin sekolah yang baik.</li>
+                            </ul>
+                        </div>
+                        <button onclick="downloadGuideline('KJP Plus')" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            <span>Unduh Panduan KJP Plus (PDF)</span>
+                        </button>
+                    </div>
+
+                    <!-- Card PIP -->
+                    <div class="bg-slate-50 border border-slate-200 p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-md">Kemendikbudristek RI</span>
+                                <i class="fa-solid fa-graduation-cap text-emerald-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Program Indonesia Pintar (PIP)</h3>
+                            <p class="text-slate-600 text-sm mb-4">Bantuan tunai dari pemerintah pusat bagi peserta didik pemegang Kartu Indonesia Pintar (KIP).</p>
+                            
+                            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2">Persyaratan Utama:</h4>
+                            <ul class="text-xs text-slate-600 space-y-1.5 mb-6 list-disc list-inside">
+                                <li>Peserta didik pemegang KIP / KKS / PKH.</li>
+                                <li>Terdaftar dan aktif pada aplikasi Dapodik sekolah.</li>
+                                <li>Diusulkan melalui dinas pendidikan setempat.</li>
+                            </ul>
+                        </div>
+                        <button onclick="downloadGuideline('PIP')" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs transition flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            <span>Unduh Panduan PIP (PDF)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Recipient Data Summary Table -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+                    <h3 class="text-base font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie text-brand-600"></i>
+                        <span>Ringkasan Penerima Bantuan Tahun Ajaran Aktif</span>
+                    </h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs sm:text-sm text-slate-600">
+                            <thead class="bg-slate-50 text-slate-800 uppercase font-bold text-[11px] tracking-wider border-b border-slate-200">
+                                <tr>
+                                    <th class="px-4 py-3">Tingkat Kelas</th>
+                                    <th class="px-4 py-3 text-center">Penerima KJP Plus</th>
+                                    <th class="px-4 py-3 text-center">Penerima PIP</th>
+                                    <th class="px-4 py-3 text-center">Total Penerima</th>
+                                    <th class="px-4 py-3 text-right">Status Verifikasi</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 font-medium">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-4 py-3 font-semibold text-slate-900">Kelas VII (Tujuh)</td>
+                                    <td class="px-4 py-3 text-center">78 Siswa</td>
+                                    <td class="px-4 py-3 text-center">24 Siswa</td>
+                                    <td class="px-4 py-3 text-center font-bold text-brand-600">102 Siswa</td>
+                                    <td class="px-4 py-3 text-right"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-[10px]">Tervalidasi</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-4 py-3 font-semibold text-slate-900">Kelas VIII (Delapan)</td>
+                                    <td class="px-4 py-3 text-center">82 Siswa</td>
+                                    <td class="px-4 py-3 text-center">26 Siswa</td>
+                                    <td class="px-4 py-3 text-center font-bold text-brand-600">108 Siswa</td>
+                                    <td class="px-4 py-3 text-right"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-[10px]">Tervalidasi</span></td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="px-4 py-3 font-semibold text-slate-900">Kelas IX (Sembilan)</td>
+                                    <td class="px-4 py-3 text-center">75 Siswa</td>
+                                    <td class="px-4 py-3 text-center">20 Siswa</td>
+                                    <td class="px-4 py-3 text-center font-bold text-brand-600">95 Siswa</td>
+                                    <td class="px-4 py-3 text-right"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-[10px]">Tervalidasi</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECTION 5: KONTAK, MASUKAN & SARAN         -->
+        <!-- ========================================== -->
+        <section id="kontak" class="py-16 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Form Side -->
+                    <div class="lg:col-span-7 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                        <span class="text-brand-600 font-bold text-xs uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">Layanan Pengaduan & Saran</span>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 mb-2">Hubungi SMPN 156 Jakarta</h2>
+                        <p class="text-slate-600 text-xs sm:text-sm mb-6">Kirim masukan atau pertanyaan Anda. Data otomatis tersimpan ke Google Sheets kami.</p>
+
+                        <form id="contact-form" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="nama" class="block text-xs font-bold text-slate-700 mb-1">Nama Lengkap *</label>
+                                    <input type="text" id="nama" name="nama" required placeholder="Contoh: Ahmad Subagja" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-xs font-bold text-slate-700 mb-1">Alamat Email *</label>
+                                    <input type="email" id="email" name="email" required placeholder="ahmad@example.com" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="whatsapp" class="block text-xs font-bold text-slate-700 mb-1">No. WhatsApp / HP</label>
+                                    <input type="tel" id="whatsapp" name="whatsapp" placeholder="081234567890" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
+                                </div>
+                                <div>
+                                    <label for="kategori" class="block text-xs font-bold text-slate-700 mb-1">Kategori *</label>
+                                    <select id="kategori" name="kategori" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 bg-white">
+                                        <option value="Saran & Masukan">Saran & Masukan</option>
+                                        <option value="Pertanyaan Akademik">Pertanyaan Akademik</option>
+                                        <option value="Info KJP / PIP">Info KJP / PIP</option>
+                                        <option value="Pengaduan">Pengaduan Layanan</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="pesan" class="block text-xs font-bold text-slate-700 mb-1">Pesan Lengkap *</label>
+                                <textarea id="pesan" name="pesan" rows="4" required placeholder="Tuliskan masukan Anda secara rinci..." class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+                            </div>
+
+                            <button type="submit" id="btn-submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-xl text-sm transition flex items-center justify-center gap-2 shadow-md">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                <span>Kirim Pesan</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Details Side -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                            <h3 class="text-lg font-bold text-slate-900 border-b pb-3">Informasi Kontak Alamat</h3>
+                            
+                            <div class="flex items-start gap-3 text-sm">
+                                <div class="text-brand-600 mt-1"><i class="fa-solid fa-location-dot"></i></div>
+                                <div>
+                                    <span class="block font-semibold text-slate-800">Alamat Lengkap</span>
+                                    <span class="text-slate-600 text-xs">Jl. Kramat Pulo Gundul IV No. 4, RT.10/RW.3, Kel. Johar Baru, Kec. Johar Baru, Kota Jakarta Pusat, D.K.I. Jakarta 10560</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 text-sm">
+                                <div class="text-brand-600 mt-1"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <span class="block font-semibold text-slate-800">Telepon Official</span>
+                                    <span class="text-slate-600 text-xs">(021) 4247271</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 text-sm">
+                                <div class="text-brand-600 mt-1"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <span class="block font-semibold text-slate-800">Email Resmi</span>
+                                    <span class="text-slate-600 text-xs">info@smpn156jakarta.sch.id</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3 text-sm">
+                                <div class="text-brand-600 mt-1"><i class="fa-solid fa-clock"></i></div>
+                                <div>
+                                    <span class="block font-semibold text-slate-800">Jam Layanan Tata Usaha</span>
+                                    <span class="text-slate-600 text-xs">Senin - Jumat: 06.30 - 15.00 WIB</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Embedded Google Maps Johar Baru -->
+                        <div class="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm overflow-hidden h-64">
+                            <iframe 
+                                title="Peta Lokasi SMPN 156 Jakarta"
+                                src="https://maps.app.goo.gl/2x17KWyzrGDHfRLfA" 
+                                class="w-full h-full rounded-xl border-0" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- SECTION 6: GOOGLE APPS SCRIPT ADMIN GUIDE  -->
+        <!-- ========================================== -->
+        <section class="py-12 bg-slate-900 text-slate-300 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <details class="group bg-slate-800/60 rounded-2xl border border-slate-700/80 p-6">
+                    <summary class="cursor-pointer font-bold text-white flex items-center justify-between text-sm sm:text-base">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-code text-brand-500"></i>
+                            <span>Panduan Admin: Kode Google Apps Script Auto-Header Spreadsheet</span>
+                        </span>
+                        <i class="fa-solid fa-chevron-down group-open:rotate-180 transition-transform"></i>
+                    </summary>
+                    
+                    <div class="mt-4 pt-4 border-t border-slate-700 text-xs leading-relaxed space-y-3">
+                        <p>Tempelkan kode Apps Script berikut ke Google Sheets Anda (`Extensions &gt; Apps Script`). Script ini **otomatis membuat Sheet 'Pesan Kontak' dan menambahkan Header baris pertama** jika sheet belum dibuat saat pertama kali menerima kiriman form.</p>
+
+                        <div class="bg-slate-950 p-4 rounded-xl font-mono text-[11px] text-emerald-400 overflow-x-auto border border-slate-800">
+<pre>
+function doPost(e) {
+  var lock = LockService.getScriptLock();
+  lock.tryLock(10000);
+  
+  try {
+    var doc = SpreadsheetApp.getActiveSpreadsheet();
+    var sheetName = "Pesan Kontak";
+    var sheet = doc.getSheetByName(sheetName);
+    
+    // Auto-create Sheet & Headers if missing
+    if (!sheet) {
+      sheet = doc.insertSheet(sheetName);
+      var headers = ["Waktu Kirim", "Nama Lengkap", "Email", "No. WhatsApp", "Kategori", "Pesan", "Status"];
+      sheet.appendRow(headers);
+      
+      var headerRange = sheet.getRange(1, 1, 1, headers.length);
+      headerRange.setFontWeight("bold");
+      headerRange.setBackground("#1E3A8A");
+      headerRange.setFontColor("#FFFFFF");
+      sheet.setFrozenRows(1);
+    }
+    
+    var data = JSON.parse(e.postData.contents);
+    var timestamp = new Date().toLocaleString("id-ID", { timeZone: "Asia/Jakarta" });
+    
+    sheet.appendRow([
+      timestamp,
+      data.nama || "-",
+      data.email || "-",
+      data.whatsapp || "-",
+      data.kategori || "-",
+      data.pesan || "-",
+      "Belum Dibaca"
+    ]);
+    
+    return ContentService
+      .createTextOutput(JSON.stringify({ "result": "success" }))
+      .setMimeType(ContentService.MimeType.JSON);
+      
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ "result": "error", "error": error.toString() }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock();
+  }
+}
+</pre>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/img/logo.png" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/100x100/1e40af/ffffff?text=156';" 
+                             alt="Logo" 
+                             class="w-10 h-10 object-contain rounded-md">
+                        <span class="text-white font-bold text-base">SMPN 156 JAKARTA</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Jl. Kramat Pulo Gundul III No. 4, Johar Baru, Jakarta Pusat 10560.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Navigasi Utama</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#beranda" class="hover:text-brand-500 transition">Beranda Utama</a></li>
+                        <li><a href="#profil" class="hover:text-brand-500 transition">Profil & Sejarah</a></li>
+                        <li><a href="#berita" class="hover:text-brand-500 transition">Berita & Pengumuman</a></li>
+                        <li><a href="#kjp-pip" class="hover:text-brand-500 transition">Bantuan KJP Plus & PIP</a></li>
+                        <li><a href="#kontak" class="hover:text-brand-500 transition">Kontak & Lokasi</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Layanan Digital</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:text-brand-500 transition">Portal LMS / E-Learning</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition">Portal Arsip Pegawai</a></li>
+                        <li><a href="#" class="hover:text-brand-500 transition">Perpustakaan Digital</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Ikuti Kami</h4>
+                    <div class="flex gap-3 text-lg">
+                        <a href="#" class="w-9 h-9 bg-slate-900 border border-slate-800 hover:border-brand-500 hover:text-brand-500 rounded-lg flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-9 h-9 bg-slate-900 border border-slate-800 hover:border-brand-500 hover:text-brand-500 rounded-lg flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-9 h-9 bg-slate-900 border border-slate-800 hover:border-brand-500 hover:text-brand-500 rounded-lg flex items-center justify-center transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-900 mt-12 pt-6 text-center text-xs text-slate-500">
+                <p>&copy; 2026 SMP Negeri 156 Jakarta. Tim Teknologi Informasi Sekolah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL POPUP (Detail Berita) -->
+    <div id="news-modal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-100 flex flex-col">
+            <div class="p-6 border-b border-slate-200 flex justify-between items-center sticky top-0 bg-white z-10">
+                <span id="modal-category" class="bg-brand-100 text-brand-700 text-xs font-bold px-3 py-1 rounded-full">Kategori</span>
+                <button onclick="closeNewsModal()" class="text-slate-400 hover:text-slate-600 text-xl font-bold p-1">&times;</button>
+            </div>
+            <div class="p-6 space-y-4">
+                <img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-xl">
+                <div class="text-xs text-slate-400 flex items-center gap-2">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="modal-date"></span>
+                </div>
+                <h3 id="modal-title" class="text-xl font-bold text-slate-900"></h3>
+                <p id="modal-content" class="text-slate-600 text-sm leading-relaxed whitespace-pre-line"></p>
+            </div>
+            <div class="p-4 border-t border-slate-200 bg-slate-50 text-right">
+                <button onclick="closeNewsModal()" class="bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs px-5 py-2.5 rounded-xl transition">Tutup</button>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- Script untuk Memuat Data Dummy / LocalStorage -->
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        // Simulasi data berita bawaan atau diambil dari memori lokal
-        let beritaDefault = [
-            { judul: "Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran", tipe: "pengumuman", konten: "Informasi lengkap mengenai jadwal dan persyaratan pendaftaran siswa baru SMPN 156 Jakarta.", tanggal: "2026-06-01" },
-            { judul: "Kegiatan Jumat Bersih dan Sehat", tipe: "berita", konten: "Seluruh warga sekolah bersama-sama melaksanakan kerja bakti membersihkan lingkungan sekolah.", tanggal: "2026-06-05" }
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 hidden bg-slate-900 text-white px-5 py-3 rounded-xl shadow-xl border border-slate-700 text-xs flex items-center gap-3 transition-all duration-300">
+        <i id="toast-icon" class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+        <span id="toast-message">Notifikasi</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // CONFIG : URL Google Apps Script Web App
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzUktkG0QxD0SJXNmNt_cTm_TjDIfQOt9wiH0kJVQThNZVBdnlFqdA2M7sX--SHCjRi/exec";
+
+        // HELPER: Convert Google Drive Link/ID into direct printable image URL
+        function getGoogleDriveDirectUrl(driveUrlOrId) {
+            if (!driveUrlOrId) return 'https://placehold.co/600x400/e2e8f0/64748b?text=Tidak+Ada+Gambar';
+            
+            let fileId = driveUrlOrId.trim();
+            const match = driveUrlOrId.match(/\/d\/([a-zA-Z0-9_-]+)/) || driveUrlOrId.match(/id=([a-zA-Z0-9_-]+)/);
+            if (match && match[1]) {
+                fileId = match[1];
+            }
+            return `https://lh3.googleusercontent.com/d/${fileId}`;
+        }
+
+        // MOCK DATA BERITA WITH GOOGLE DRIVE FILE IDs
+        const newsData = [
+            {
+                id: 1,
+                title: "Pengumuman Kegiatan Panen Karya P5 & Pameran Green House Adiwiyata",
+                category: "Pengumuman",
+                date: "24 Oktober 2026",
+                driveImageId: "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs", 
+                summary: "SMPN 156 Jakarta menggelar Pameran Hasil Karya Daur Ulang dan Tanaman Organik Green House.",
+                content: "Seluruh warga SMPN 156 Jakarta diundang untuk menyaksikan Panen Karya Proyek Penguatan Profil Pelajar Pancasila (P5) yang berfokus pada Pengelolaan Lingkungan Berkelanjutan. Acara diselenggarakan di Aula Sekolah Johar Baru."
+            },
+            {
+                id: 2,
+                title: "Juara I Lomba Pidato Bahasa Indonesia Tingkat Jakarta Pusat",
+                category: "Prestasi",
+                date: "18 Oktober 2026",
+                driveImageId: "1c2d3e4f5g6h7i8j9k0lMNOpqrstuvwx", 
+                summary: "Siswa SMPN 156 Jakarta meraih predikat pertama dalam ajang Kompetisi Bahasa dan Sastra.",
+                content: "Selamat kepada perwakilan peserta didik SMPN 156 Jakarta yang telah menyabet Juara 1 Lomba Pidato Bahasa Indonesia. Prestasi ini menorehkan kebanggaan bagi seluruh civitas akademika Johar Baru."
+            },
+            {
+                id: 3,
+                title: "Jadwal Verifikasi & Pendataan Ulang Penerima KJP Plus Tahap II",
+                category: "Berita",
+                date: "12 Oktober 2026",
+                driveImageId: "9z8y7x6w5v4u3t2s1r0qPONmlkjihgfed", 
+                summary: "Informasi penting mengenai kelengkapan berkas fisik KJP Plus bagi orang tua/wali murid.",
+                content: "Disampaikan kepada seluruh orang tua siswa calon penerima KJP Plus untuk menyerahkan berkas verifikasi administrasi ke Ruang Tata Usaha SMPN 156 Jakarta paling lambat akhir pekan ini."
+            }
         ];
 
-        let container = document.getElementById('konten-berita');
-        container.innerHTML = '';
+        // RENDER NEWS GRID
+        function renderNews(filteredData = newsData) {
+            const container = document.getElementById('news-grid');
+            const noNews = document.getElementById('no-news');
+            
+            container.innerHTML = '';
 
-        beritaDefault.forEach(i => {
-            container.innerHTML += `
-                <div class="col-md-6 col-lg-4">
-                    <div class="card card-custom h-100 p-4">
-                        <span class="badge bg-${i.tipe === 'pengumuman' ? 'warning text-dark' : 'primary'} mb-2 w-25 text-center">${i.tipe}</span>
-                        <h5 class="fw-bold mt-2">${i.judul}</h5>
-                        <p class="text-secondary small">${i.konten}</p>
-                        <small class="text-muted mt-auto"><i class="bi bi-clock me-1"></i> ${i.tanggal}</small>
+            if (filteredData.length === 0) {
+                noNews.classList.remove('hidden');
+                return;
+            } else {
+                noNews.classList.add('hidden');
+            }
+
+            filteredData.forEach(item => {
+                const imageUrl = getGoogleDriveDirectUrl(item.driveImageId);
+
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col";
+                card.innerHTML = `
+                    <div class="relative h-48 overflow-hidden bg-slate-100">
+                        <img src="${imageUrl}" 
+                             alt="${item.title}" 
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e40af/ffffff?text=SMPN+156+Jakarta';"
+                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-3 left-3 bg-brand-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+                            ${item.category}
+                        </span>
                     </div>
-                </div>`;
-        });
-    });
-</script>
+                    <div class="p-6 flex-grow flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <div class="text-xs text-slate-400 flex items-center gap-1.5">
+                                <i class="fa-regular fa-calendar"></i>
+                                <span>${item.date}</span>
+                            </div>
+                            <h3 class="font-bold text-slate-900 text-base leading-snug line-clamp-2 hover:text-brand-600 cursor-pointer" onclick="openNewsModal(${item.id})">
+                                ${item.title}
+                            </h3>
+                            <p class="text-slate-600 text-xs leading-relaxed line-clamp-3">
+                                ${item.summary}
+                            </p>
+                        </div>
+                        <button onclick="openNewsModal(${item.id})" class="inline-flex items-center gap-2 text-xs font-bold text-brand-600 hover:text-brand-700 pt-2 transition">
+                            <span>Baca Selengkapnya</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        // FILTER NEWS
+        let activeCategory = "Semua";
+
+        function filterNews() {
+            const query = document.getElementById('news-search').value.toLowerCase();
+            const filtered = newsData.filter(item => {
+                const matchesCategory = (activeCategory === "Semua") || (item.category === activeCategory);
+                const matchesSearch = item.title.toLowerCase().includes(query) || item.summary.toLowerCase().includes(query);
+                return matchesCategory && matchesSearch;
+            });
+            renderNews(filtered);
+        }
+
+        // MODAL POPUP
+        function openNewsModal(id) {
+            const item = newsData.find(n => n.id === id);
+            if (!item) return;
+
+            document.getElementById('modal-category').innerText = item.category;
+            document.getElementById('modal-date').innerText = item.date;
+            document.getElementById('modal-title').innerText = item.title;
+            document.getElementById('modal-content').innerText = item.content;
+            document.getElementById('modal-image').src = getGoogleDriveDirectUrl(item.driveImageId);
+
+            document.getElementById('news-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeNewsModal() {
+            document.getElementById('news-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // TOAST HELPER
+        function showToast(message, isSuccess = true) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMessage.innerText = message;
+            if (isSuccess) {
+                toastIcon.className = "fa-solid fa-circle-check text-emerald-400 text-base";
+            } else {
+                toastIcon.className = "fa-solid fa-circle-xmark text-red-400 text-base";
+            }
+
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3500);
+        }
+
+        function downloadGuideline(type) {
+            showToast(`Mengunduh Panduan ${type} SMPN 156...`, true);
+        }
+
+        // COUNTER ANIMATION
+        function initCounters() {
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const speed = 200;
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 15);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // DOM INIT & EVENT LISTENERS
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNews();
+            initCounters();
+
+            document.getElementById('news-search').addEventListener('input', filterNews);
+
+            const categoryBtns = document.querySelectorAll('#category-pills button');
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    categoryBtns.forEach(b => {
+                        b.className = "pill-btn bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 px-4 py-2 rounded-xl text-xs font-semibold transition";
+                    });
+                    e.target.className = "pill-btn bg-brand-600 text-white px-4 py-2 rounded-xl text-xs font-semibold transition";
+                    activeCategory = e.target.getAttribute('data-category');
+                    filterNews();
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Contact Form Submit Handler
+            const contactForm = document.getElementById('contact-form');
+            const btnSubmit = document.getElementById('btn-submit');
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const originalBtnText = btnSubmit.innerHTML;
+                btnSubmit.disabled = true;
+                btnSubmit.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> <span>Mengirim...</span>`;
+
+                const formData = {
+                    nama: document.getElementById('nama').value,
+                    email: document.getElementById('email').value,
+                    whatsapp: document.getElementById('whatsapp').value,
+                    kategori: document.getElementById('kategori').value,
+                    pesan: document.getElementById('pesan').value
+                };
+
+                if (SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_URL_HERE") {
+                    setTimeout(() => {
+                        showToast('Pesan terkirim! (Demo - Harap pasang SCRIPT_URL)', true);
+                        contactForm.reset();
+                        btnSubmit.disabled = false;
+                        btnSubmit.innerHTML = originalBtnText;
+                    }, 1000);
+                    return;
+                }
+
+                fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                })
+                .then(() => {
+                    showToast('Pesan berhasil terkirim ke Google Sheets!', true);
+                    contactForm.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showToast('Gagal mengirim pesan.', false);
+                })
+                .finally(() => {
+                    btnSubmit.disabled = false;
+                    btnSubmit.innerHTML = originalBtnText;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
